@@ -137,10 +137,35 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="max-w-2xl mx-auto space-y-6">
-        {/* Header */}
+        {/* Header with Logo */}
         <div className="text-center py-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Minutes Checker</h1>
-          <p className="text-gray-600">Check your phone minutes balance</p>
+          <div className="flex flex-col items-center space-y-4">
+            <div className="relative">
+              <img
+                src="/android-chrome-512x512.png"
+                alt="Logo"
+                className="h-20 w-auto object-contain drop-shadow-lg"
+                onError={(e) => {
+                  // Fallback if logo.png doesn't exist, try other common extensions
+                  const target = e.target as HTMLImageElement;
+                  if (target.src.includes("logo.png")) {
+                    target.src = "/logo.svg";
+                  } else if (target.src.includes("logo.svg")) {
+                    target.src = "/logo.jpg";
+                  } else if (target.src.includes("logo.jpg")) {
+                    target.src = "/logo.jpeg";
+                  } else {
+                    // Hide image if no logo found
+                    target.style.display = "none";
+                  }
+                }}
+              />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold text-gray-900 mb-2">Minutes Checker</h1>
+              <p className="text-gray-600">Check your phone minutes balance</p>
+            </div>
+          </div>
         </div>
 
         {/* Input Form */}
