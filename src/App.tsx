@@ -183,7 +183,7 @@ const App = () => {
                 <Input
                   id="phone"
                   type="tel"
-                  placeholder="02093606060"
+                  placeholder="Enter phone number"
                   value={phoneNumber}
                   onChange={handleInputChange}
                   className="text-lg"
@@ -293,7 +293,7 @@ const App = () => {
               <li>• Enter a phone number (digits only)</li>
               <li>• Click "Check Minutes" to fetch data from the API</li>
               <li>• The results will display the Minutes</li>
-              <li>• Example: 02093606060</li>
+              <li>• Example: 08012345678</li>
             </ul>
           </CardContent>
         </Card>
